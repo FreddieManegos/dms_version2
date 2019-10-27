@@ -132,11 +132,11 @@ return [
         [
             'text'        => 'Dashboard',
             'url'         => 'home',
-            'icon'        => 'fas fa-fw fa-cube '
+            'icon'        => 'fa fa-fw fa-cube   '
         ],
         [
             'text'        => 'Documents',
-            'url'         => 'document',
+            'url'         => 'documents',
             'icon'        => 'fas fa-fw fa-file'
         ],
         ['header' => 'account_settings'],

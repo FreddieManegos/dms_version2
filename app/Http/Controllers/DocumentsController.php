@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Document_types;
 use App\Documents;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentsController extends Controller
 {
@@ -15,6 +19,8 @@ class DocumentsController extends Controller
     public function index()
     {
         //
+        $documents = Documents::all();
+        return view('document.index',compact('documents'));
     }
 
     /**
@@ -25,6 +31,8 @@ class DocumentsController extends Controller
     public function create()
     {
         //
+        $doc_types = Document_types::all();
+        return view('document.create', compact('doc_types'));
     }
 
     /**
@@ -35,7 +43,24 @@ class DocumentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $type = "";
+        if($request->doctype == "Announcement")
+            $type = "An";
+        elseif ($request->doctype == "Memorandum")
+            $type = "Memo";
+        elseif($request->doctype == "Special Order")
+            $type = "SO";
+
+        $filename = $type.' '.$request->filename.'.'.$request->file('file')->getClientOriginalExtension();
+        $request->file->storeAs('pdf', $filename);
+        Documents::create([
+            'title'         => $request->filename,
+            'file_name'     => $filename,
+            'type_id'       => $request->doctype,
+            'employee_id'   => $request->employee_id,
+            'status'        => 'Approved'
+        ]);
+        return redirect()->back()->with('success', 'File uploaded successfully.');
     }
 
     /**
@@ -44,9 +69,11 @@ class DocumentsController extends Controller
      * @param  \App\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function show(Documents $documents)
+    public function show(Documents $document)
     {
         //
+        $document = Documents::where('id',$document->id)->first();
+        return response()->file(storage_path('app\pdf\\' . $document->file_name));
     }
 
     /**
@@ -81,5 +108,9 @@ class DocumentsController extends Controller
     public function destroy(Documents $documents)
     {
         //
+    }
+
+    public function view_pdf(Request $request){
+
     }
 }
