@@ -52,8 +52,10 @@
                                     <td>
                                         <span><a href="{{route('documents.show', $document->id)}}" target="_blank"   title="Click to preview" class="previewer" data-title="">
                                                 <i class="fa fa-eye" aria-hidden="true"></i> Preview</a>
-                                        </span>&nbsp;&nbsp;
+                                        </span>&nbsp;
                                         <span><a href="" title="Click to download" ><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+                                        </span>&nbsp;
+                                        <span><a href="{{route('documents.revise', $document->id)}}" title="Revise" ><i class="fa fa-history" aria-hidden="true"></i> Revise</a>
                                         </span>
                                     </td>
                                     <td>{{$document->uploader->name}}</td>
@@ -95,5 +97,7 @@
         $('#q').keyup(function(){
             oTable.search($(this).val()).draw() ;
         })
+
+
     </script>
 @stop

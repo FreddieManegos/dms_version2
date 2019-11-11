@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52b5dcd9-a324-48e2-bdc1-9cb4fb56beff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/document/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dms_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dms_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Documents.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Documents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DocumentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DocumentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_21_183614_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_21_183614_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/document/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/document/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/document/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/document/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,7 +121,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LendingSystem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -172,7 +163,14 @@
       <workItem from="1571972579626" duration="7000" />
       <workItem from="1571975312038" duration="642000" />
       <workItem from="1572100584895" duration="9198000" />
-      <workItem from="1572157065492" duration="943000" />
+      <workItem from="1572157065492" duration="2816000" />
+      <workItem from="1572217758684" duration="617000" />
+      <workItem from="1572419984563" duration="24000" />
+      <workItem from="1572512058988" duration="1103000" />
+      <workItem from="1572554367994" duration="1726000" />
+      <workItem from="1573395244322" duration="957000" />
+      <workItem from="1573446089906" duration="726000" />
+      <workItem from="1573447208924" duration="4626000" />
     </task>
     <servers />
   </component>

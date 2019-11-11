@@ -110,7 +110,8 @@ class DocumentsController extends Controller
         //
     }
 
-    public function view_pdf(Request $request){
-
+    public function revise(Request $request){
+        $doc_types = Document_types::all();
+        return view('document.revise',compact('doc_types'));
     }
 }

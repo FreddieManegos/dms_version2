@@ -5,61 +5,61 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Create</h1>
+    <h1>Revise</h1>
 @stop
 
 @section('content')
+
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb" style="margin-bottom: 0px; background-color: #ECF0F5; padding: 0px;">
             <li class="breadcrumb-item"><a href="{{route('documents.index')}}">Documents</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Create</li>
+            <li class="breadcrumb-item active" aria-current="page">Revise</li>
         </ol>
     </nav>
-    <form action="{{route('documents.store')}}" method="POST" enctype="multipart/form-data">
-        {{csrf_field()}}
+{{--    <form action="{{route('documents.store')}}" method="POST" enctype="multipart/form-data">--}}
+{{--        {{csrf_field()}}--}}
         <input type="hidden" id="employee_id" name="employee_id" value="{{Auth::user()->id}}">
         <div class="col-md-4">
-        <div class="row">
-            <div class="form-group">
-                <label for="filename">File Name: </label>
-                <input type="text" name="filename" id="filename" class="form-control">
+            <div class="row">
+                <div class="form-group">
+                    <label for="filename">File Name: </label>
+                    <input type="text" name="filename" id="filename" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="doctype">Document Type: </label>
+                    <select type="text" name="doctype" id="doctype" class="form-control">
+                        <option value="" selected>--Choose Document Type--</option>
+                        @foreach($doc_types as $doc_type)
+                            <option value="{{$doc_type->id}}">{{$doc_type->type}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <label for="file">File:</label>
+                <div class="input-group">
+                    <input type="file" name="file" id="file" class="form-control uploadjs" data-id="3" accept="application/pdf">
+                    <span class="input-group-btn" id="btn-search"><button class="btn btn-default" type="button"><i class="fa fa-eye"></i></button></span>
+                </div>
+            </div>
+            <div class="row">
+                <br>
+                <button type="submit" class="btn btn-success form-control">Submit</button>
             </div>
         </div>
-        <div class="row">
-            <div class="form-group">
-                <label for="doctype">Document Type: </label>
-                <select type="text" name="doctype" id="doctype" class="form-control">
-                    <option value="" selected>--Choose Document Type--</option>
-                    @foreach($doc_types as $doc_type)
-                        <option value="{{$doc_type->id}}">{{$doc_type->type}}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <label for="file">File:</label>
-            <div class="input-group">
-                <input type="file" name="file" id="file" class="form-control uploadjs" data-id="3" accept="application/pdf">
-                <span class="input-group-btn" id="btn-search"><button class="btn btn-default" type="button"><i class="fa fa-eye"></i></button></span>
-            </div>
-        </div>
-        <div class="row">
-            <br>
-            <button type="submit" class="btn btn-success form-control">Submit</button>
-        </div>
-    </div>
         <div class="col-md-8">
             <div class="row">
                 <div class="preview" style="margin-left: 10px;">
                     <label for="preview-3_1">Preview:</label>
                     <img id="preview-3" alt="">
-                    @if(is_uploaded_file())
                     <embed id="preview-3_1" type="application/pdf" autoplay="false" style="width: 100%; height: 450px;">
                 </div>
             </div>
-            </div>
         </div>
-    </form>
+        </div>
+{{--    </form>--}}
     </div>
 @stop
 
