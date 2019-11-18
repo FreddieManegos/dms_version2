@@ -32,6 +32,7 @@
                     <select type="text" name="doctype" id="doctype" class="form-control">
                         <option value="" selected>--Choose Document Type--</option>
                         @foreach($doc_types as $doc_type)
+                            @if()
                             <option value="{{$doc_type->id}}">{{$doc_type->type}}</option>
                         @endforeach
                     </select>

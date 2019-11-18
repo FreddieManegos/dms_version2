@@ -17,33 +17,39 @@
 {{--                    <span class="input-group-btn" id="btn-search"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>--}}
 {{--                </div>--}}
 {{--            </div>--}}
+            <div class="blockquote text-center">
+                <h2 class="text-secondary"><strong>Good Morning, Freddie Mar</strong></h2>
+                <h4><strong><em>DMS</em></strong> is a web-based document management platform built for utmost security as well</h4>
+                <h4>as easy storage, management, and sharing of the IT Department's documents.</h4>
+            </div>
+            <hr>
             <div class="row" style="margin-top: 20px;">
                 <div class="col-md-4">
                     <div class="info-box">
-                        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                        <span class="info-box-icon bg-green-gradient"><i class="fa fa-newspaper"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">CPU Traffic</span>
-                            <span class="info-box-number">90<small>%</small></span>
+                            <span class="info-box-text"># Documents</span>
+                            <span class="info-box-number">120</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="info-box">
-                        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                        <span class="info-box-icon bg-aqua-gradient"><i class="fa fa-file"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">CPU Traffic</span>
-                            <span class="info-box-number">90<small>%</small></span>
+                            <span class="info-box-text">Last 15 days</span>
+                            <span class="info-box-number">160</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="info-box">
-                        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                        <span class="info-box-icon bg-yellow-gradient"><i class="fa fa-file"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">CPU Traffic</span>
-                            <span class="info-box-number">90<small>%</small></span>
+                            <span class="info-box-text">Last 30 Days</span>
+                            <span class="info-box-number">30</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -52,25 +58,34 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <table id="myTable" class="display" >
-                        <a href="{{route('documents.create')}}"><button class="btn btn-success">+ Add File</button></a>
+                    <a href="{{route('documents.create')}}"><button class="btn btn-success">+ Add File</button></a>
+                    <br>
+                    <br>
+                    <p class="h4"><strong>Recently Added:</strong></p>
+                    <table id="myTable" class="display table-bordered" >
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Decription</th>
-                            <th>Date</th>
+                            <th>Action</th>
                             <th>Uploader</th>
-                            <th>Action</tr>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Date Modified</th>
+                            <th>Date Uploaded</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @for($i = 0; $i < 5 ; $i++)
                         <tr>
                             <td>Row 1 Data 1</td>
                             <td>Row 1 Data 2</td>
                             <td>Row 1 Data 1</td>
                             <td>Row 1 Data 2</td>
                             <td>Row 1 Data 1</td>
+                            <td>Row 1 Data 1</td>
+                            <td>Row 1 Data 1</td>
                         </tr>
+                            @endfor
                         </tbody>
                     </table>
                 </div>
@@ -87,6 +102,10 @@
             background-color: white;
             padding:10px;
         }
+
+        .info-box {
+            box-shadow: 0 1px 4px 1px rgba(0,0,0,0.1);
+        }
     </style>
 @stop
 
@@ -97,5 +116,13 @@
         $(document).ready( function () {
             $('#myTable').DataTable();
         } );
+
+        $('#myTable').DataTable(
+            {
+                "ordering": false,
+                "info":     false,
+                "dom": '<"top">rt<"bottom"i><"clear">'
+            }
+        );
     </script>
 @stop

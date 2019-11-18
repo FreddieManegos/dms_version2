@@ -26,3 +26,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/documents','DocumentsController');
 
 Route::get('/documents/re/{id}','DocumentsController@revise')->name('documents.revise');
+
+Route::resource('profile','UsersController');

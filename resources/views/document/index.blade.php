@@ -90,7 +90,7 @@
         oTable =  $('#myTable').DataTable(
             {
                 "ordering": false,
-                "info":     false,
+                "info":     true,
                 "dom": '<"top"lp>rt<"bottom"li><"clear">'
             }
         );
