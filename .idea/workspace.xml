@@ -4,9 +4,9 @@
     <list default="true" id="52b5dcd9-a324-48e2-bdc1-9cb4fb56beff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DocumentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DocumentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/document/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/document/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/document/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/document/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/document/revise.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/document/revise.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -176,7 +176,7 @@
       <workItem from="1573572870721" duration="2540000" />
       <workItem from="1573836426820" duration="4279000" />
       <workItem from="1573911768763" duration="6233000" />
-      <workItem from="1573984914160" duration="9926000" />
+      <workItem from="1573984914160" duration="12649000" />
     </task>
     <servers />
   </component>

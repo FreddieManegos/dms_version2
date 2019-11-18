@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\PDF;
 
 class DocumentsController extends Controller
 {
@@ -114,5 +115,11 @@ class DocumentsController extends Controller
 
         $doc_types = Document_types::all();
         return view('document.revise',compact('doc_types'));
+    }
+
+    public function download(Documents $document){
+        $document = Documents::where('id',$document->id)->first();
+
+        return $document->download($document->title.'.pdf');
     }
 }

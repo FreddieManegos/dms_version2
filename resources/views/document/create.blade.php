@@ -53,7 +53,6 @@
                 <div class="preview" style="margin-left: 10px;">
                     <label for="preview-3_1">Preview:</label>
                     <img id="preview-3" alt="">
-                    @if(is_uploaded_file())
                     <embed id="preview-3_1" type="application/pdf" autoplay="false" style="width: 100%; height: 450px;">
                 </div>
             </div>

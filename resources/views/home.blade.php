@@ -29,7 +29,7 @@
                         <span class="info-box-icon bg-green-gradient"><i class="fa fa-newspaper"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text"># Documents</span>
-                            <span class="info-box-number">120</span>
+                            <span class="info-box-number">{{$num_docs}}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -39,7 +39,7 @@
                         <span class="info-box-icon bg-aqua-gradient"><i class="fa fa-file"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Last 15 days</span>
-                            <span class="info-box-number">160</span>
+                            <span class="info-box-number">{{$last_fifteen_num_doc}}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -75,17 +75,25 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @for($i = 0; $i < 5 ; $i++)
+                        @foreach($recently_added_docs as $document)
                         <tr>
-                            <td>Row 1 Data 1</td>
-                            <td>Row 1 Data 2</td>
-                            <td>Row 1 Data 1</td>
-                            <td>Row 1 Data 2</td>
-                            <td>Row 1 Data 1</td>
-                            <td>Row 1 Data 1</td>
-                            <td>Row 1 Data 1</td>
+                            <td>{{$document->file_name}}</td>
+                            <td>
+                                        <span><a href="{{route('documents.show', $document->id)}}" target="_blank"   title="Click to preview" class="previewer" data-title="">
+                                                <i class="fa fa-eye" aria-hidden="true"></i> Preview</a>
+                                        </span>&nbsp;
+                                <span><a href="{{route('documents.download', $document->id)}}" title="Click to download" ><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+                                        </span>&nbsp;
+                                <span><a href="{{route('documents.revise', $document->id)}}" title="Revise" ><i class="fa fa-history" aria-hidden="true"></i> Revise</a>
+                                        </span>
+                            </td>
+                            <td>{{$document->uploader->name}}</td>
+                            <td>{{$document->type->type}}</td>
+                            <td>{{$document->status}}</td>
+                            <td>{{$document->updated_at->format('F j\\, Y h:i:s A')}}</td>
+                            <td>{{$document->created_at->format('F j\\, Y h:i:s A')}}</td>
                         </tr>
-                            @endfor
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
